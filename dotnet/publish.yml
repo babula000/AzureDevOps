@@ -1,0 +1,21 @@
+parameters:
+  - name: buildConfiguration
+    default: 'Release'
+    values:
+      - Debug
+      - Release
+    
+
+stages:
+  - stage: publish
+    jobs:
+      - job: publish
+        steps:
+        - task: DotNetCoreCLI@2
+          inputs:
+            command: 'publish'
+            publishWebProjects: false
+            projects: '**/*.csproj'
+            arguments: '--configuration ${{parameters.buildConfiguration}} --no-restore'
+            modifyOutputPath: false
+          displayName: 'Publish'
