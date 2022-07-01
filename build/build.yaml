@@ -1,0 +1,10 @@
+parameters:
+  - name: printval
+    default: 'print param'
+stages:
+  - stage: stage1
+    jobs:
+      - job: stagejob
+        steps:
+          - bash: echo Stage Job stage/stage.yaml
+          - bash: echo ${{parameters.printval}}
