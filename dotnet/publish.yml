@@ -4,6 +4,8 @@ parameters:
     values:
       - Debug
       - Release
+  - name: ArtifactName
+    default: drop
     
 
 stages:
@@ -19,3 +21,8 @@ stages:
             arguments: '--configuration ${{parameters.buildConfiguration}} --no-restore'
             modifyOutputPath: false
           displayName: 'Publish'
+        - task: PublishBuildArtifacts@1
+          inputs:
+            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+            ArtifactName: '${{parameters.ArtifactName}}'
+            publishLocation: 'Container'
