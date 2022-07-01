@@ -1,6 +1,4 @@
-jobs:
-      - job: test
-        steps:
+steps:
           - task: DotNetCoreCLI@2
             inputs:
               command: 'test'
