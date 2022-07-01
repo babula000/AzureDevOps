@@ -12,3 +12,4 @@ stages:
       - job: onlyjob
         steps:
           - bash: echo Only Job
+  - template: stage.yaml
