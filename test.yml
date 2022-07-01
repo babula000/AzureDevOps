@@ -1,6 +1,4 @@
-stages:
-  - stage: test
-    jobs:
+jobs:
       - job: test
         steps:
           - task: DotNetCoreCLI@2
