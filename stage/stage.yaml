@@ -3,4 +3,4 @@ stages:
     jobs:
       - job: stagejob
         steps:
-          - bash: echo Stage Job
+          - bash: echo Stage Job stage/stage.yaml
