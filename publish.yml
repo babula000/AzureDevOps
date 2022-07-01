@@ -7,9 +7,7 @@ parameters:
   - name: ArtifactName
     default: drop
 
-    jobs:
-      - job: publish
-        steps:
+steps:
         - task: DotNetCoreCLI@2
           inputs:
             command: 'publish'
