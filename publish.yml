@@ -6,10 +6,7 @@ parameters:
       - Release
   - name: ArtifactName
     default: drop
-    
 
-stages:
-  - stage: publish
     jobs:
       - job: publish
         steps:
