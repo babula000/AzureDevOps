@@ -1,0 +1,9 @@
+jobs:
+  - job:
+    steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
+
+    - script: |
+        echo Job 2
+      displayName: 'Run a multi-line script'
