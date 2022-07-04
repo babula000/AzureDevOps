@@ -1,0 +1,9 @@
+name: stage reuse
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - template: stage1.yaml
+  - template: stage2.yaml

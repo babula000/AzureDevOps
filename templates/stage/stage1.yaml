@@ -1,0 +1,6 @@
+stages:
+  - stage: stage1
+    jobs:
+      - job: stagejob1
+        steps:
+          - bash: echo Stage Job 1
