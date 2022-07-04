@@ -10,8 +10,8 @@ variables:
 - template: variable\variable1.yaml
 - template: variable\variable2.yaml
 stages:
-# Template reuse example
 
+# Template reuse example
   - template: stage\stage1.yaml
   - template: stage\stage2.yaml
 # Job reuse example
@@ -30,7 +30,6 @@ stages:
           - template: step\step1.yaml
           - template: step\step2.yaml
 # Variable reuse example
-
   - stage: variablereuse
     displayName: variable reuse demo
     jobs:
