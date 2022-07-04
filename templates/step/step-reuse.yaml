@@ -1,0 +1,16 @@
+name: step reuse
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+
+stages:
+  - stage: stepreuse
+    displayName: step reuse demo
+    jobs:
+      - job: jobreusejob
+        displayName: step reuse job
+        steps:
+          - template: step1.yaml
+          - template: step2.yaml
