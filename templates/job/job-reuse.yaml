@@ -6,7 +6,7 @@ pool:
 
 stages:
   - stage: job
-    displayName: template demo
+    displayName: jobs reuse demo
     jobs:
       - template: job1.yaml
       - template: job2.yaml
