@@ -1,0 +1,41 @@
+name: consolidated template reuse
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+# Variable reuse variables
+
+variables:
+- template: variable\variable1.yaml
+- template: variable\variable2.yaml
+stages:
+# Template reuse example
+
+  - template: stage\stage1.yaml
+  - template: stage\stage2.yaml
+# Job reuse example
+  - stage: jobreuse
+    displayName: jobs reuse demo
+    jobs:
+      - template: job\job1.yaml
+      - template: job\job2.yaml
+# Step reuse example
+  - stage: stepreuse
+    displayName: step reuse demo
+    jobs:
+      - job: jobreusejob
+        displayName: step reuse job
+        steps:
+          - template: step\step1.yaml
+          - template: step\step2.yaml
+# Variable reuse example
+
+  - stage: variablereuse
+    displayName: variable reuse demo
+    jobs:
+      - job: variablereusejob
+        displayName: variable reuse job
+        steps:
+          - script: echo Variable from Variable1.yaml is $(VariableOne).
+          - script: echo Variable from Variable2.yaml is $(VariableTwo).
