@@ -10,5 +10,5 @@ variables:
 - template: variable2.yaml
 
 steps:
-- script: echo Variable from Variable1.yaml is $(variables.VariableOne).
-- script: echo Variable from Variable2.yaml is $(variables.VariableTwo).
+- script: echo Variable from Variable1.yaml is $(VariableOne).
+- script: echo Variable from Variable2.yaml is $(VariableTwo).
